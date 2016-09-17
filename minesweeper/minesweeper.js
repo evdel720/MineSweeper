@@ -4,10 +4,10 @@ var Tile = function (board, pos) {
   this.bombed = false;
   this.explored = false;
   this.flagged = false;
-}
+};
 
 Tile.DELTAS = [[-1, -1], [-1,  0], [-1,  1], [ 0, -1],
-               [ 0,  1], [ 1, -1], [ 1,  0], [ 1,  1]]
+               [ 0,  1], [ 1, -1], [ 1,  0], [ 1,  1]];
 
 Tile.prototype.adjacentBombCount = function() {
   var bombCount = 0;
@@ -43,7 +43,7 @@ Tile.prototype.neighbors = function() {
   }.bind(this));
 
   return adjacentCoords.map(function(coord) {
-    return this.board.grid[coord[0]][coord[1]]
+    return this.board.grid[coord[0]][coord[1]];
   }.bind(this));
 };
 
@@ -82,8 +82,8 @@ Board.prototype.onBoard = function (pos) {
   return (
     pos[0] >= 0 && pos[0] < this.gridSize &&
       pos[1] >= 0 && pos[1] < this.gridSize
-  )
-}
+  );
+};
 
 Board.prototype.plantBombs = function () {
   var totalPlantedBombs = 0;

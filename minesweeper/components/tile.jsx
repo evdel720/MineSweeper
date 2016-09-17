@@ -22,7 +22,10 @@ class Tile extends Component {
     }
 
     return (
-      <div className={ className } onClick={this.handleClick.bind(this)}>{content}</div>
+      <div className={ className }
+        onClick={this.handleClick.bind(this)}>
+        {content}
+      </div>
     );
   }
 }
